@@ -39,7 +39,7 @@ float vertices[] = {
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 ```
 ### 3. VAO
-然而，VBO说到底都还只是一些数据而已，GPU怎么知道哪些是哪些？ 因此，我们需要一个数据结构来给GPU解释下这些数据的内涵。VAO会将VBO的数据读入VAO中，但是VAO也不是法力无边，它也不知道这些数据是什么，不过我们可以通过glVertexAttribPointer来调教它如何看待(attribute)这些数据。
+然而，VBO说到底都还只是一些数据而已，GPU怎么知道哪些是哪些？ 因此，我们需要一个数据结构来给GPU解释下这些数据的内涵。VAO会将VBO的数据读入VAO中，但是VAO也不是法力无边，它也不知道这些数据是什么，不过我们可以通过glVertexAttribPointer来调教它如何看待(attribute)这些数据，之后，这些数据就会作为VAO的参数(attribute)...(难怪attribute动词意思是"看待"，名词是"属性"...)
 ```
     unsigned int VAO;
     glGenVertexArrays(1,&VAO); 
